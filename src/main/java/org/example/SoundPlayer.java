@@ -37,7 +37,7 @@ public class SoundPlayer {
                     System.err.println("שגיאה בניגון סאונד קפיצה: " + "/resources/jump.wav");
                 }
             }
-        }).start(); // מפעיל את ה-Thread החדש
+        }).start();
     }
 
     public void gameOverSound() {
@@ -95,7 +95,7 @@ public class SoundPlayer {
                     System.err.println("שגיאה בניגון סאונד קפיצה: " + "/resources/jump.wav");
                 }
             }
-        }).start(); // מפעיל את ה-Thread החדש
+        }).start();
     }
 
 
