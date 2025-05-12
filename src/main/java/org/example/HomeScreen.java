@@ -1,6 +1,4 @@
-// HomeScreenPanel.java
 package org.example;
-
 import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
@@ -49,7 +47,7 @@ public class HomeScreen extends JPanel {
         playButton.setFont(new Font("Arial", Font.BOLD, 24));
         playButton.addActionListener(e -> mainFrame.showGamePanel());
 
-        JButton instructionsButton = new JButton("Instructions");
+        JButton instructionsButton = new JButton("how to play");
         instructionsButton.setFont(new Font("Arial", Font.BOLD, 24));
         instructionsButton.addActionListener(e -> mainFrame.showInstructionsPanel());
         buttonPanel.add(playButton, gbc);

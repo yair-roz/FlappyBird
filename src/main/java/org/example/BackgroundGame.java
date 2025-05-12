@@ -2,7 +2,6 @@
 // מגדירה את הגודל, מוסיפה את GamePanel שמכיל את הלוגיקה הגרפית והמשחקית
 package org.example;
 import javax.swing.ImageIcon;
-
 import javax.swing.*;
 
 public class BackgroundGame extends JFrame {

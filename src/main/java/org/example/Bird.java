@@ -1,5 +1,4 @@
 package org.example;
-
 import java.awt.Image;
 import java.awt.Graphics;
 import java.awt.Rectangle;
