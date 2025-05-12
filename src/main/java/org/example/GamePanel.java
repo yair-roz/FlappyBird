@@ -86,6 +86,7 @@ public class GamePanel extends JPanel implements KeyListener {
             SoundPlayer.gameOverSound();
             running = false;
         }
+
         double add = pipeManager.update(bird);
         score += add;
         if (add > 0) {
@@ -101,6 +102,7 @@ public class GamePanel extends JPanel implements KeyListener {
 
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+
             if (!running) {
                 restartGame();
             } else {

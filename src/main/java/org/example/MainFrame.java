@@ -20,7 +20,7 @@ public class MainFrame extends JFrame {
         setLocationRelativeTo(null);
 
         try {
-            ImageIcon icon = new ImageIcon(getClass().getResource("/Bird.png"));
+            ImageIcon icon = new ImageIcon(getClass().getResource("/BirdDown.png"));
             if (icon.getImage() != null && icon.getIconWidth() > 0) {
                 this.setIconImage(icon.getImage());
             } else {

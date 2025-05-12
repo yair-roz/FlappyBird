@@ -1,6 +1,7 @@
 package org.example;
 
 import javax.sound.sampled.*;
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -30,8 +31,6 @@ public class SoundPlayer {
                         }
                     });
                     clip.start();
-
-
                 } catch (Exception e) {
                     e.printStackTrace();
                     System.err.println("שגיאה בניגון סאונד קפיצה: " + "/resources/jump.wav");

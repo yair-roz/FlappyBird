@@ -14,8 +14,9 @@ public class Bird {
     private Image birdImage;
 
     public Bird() {
-        birdImage = new ImageIcon(getClass().getResource("/Bird.png")).getImage();
+        birdImage = new ImageIcon(getClass().getResource("/BirdDown.png")).getImage();
     }
+
 
     public void draw(Graphics g) {
         g.drawImage(birdImage, (int)x, (int)y, width, height, null);
