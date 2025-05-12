@@ -39,7 +39,7 @@ public class HomeScreen extends JPanel {
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.fill = GridBagConstraints.NONE;
         gbc.anchor = GridBagConstraints.CENTER;
-        gbc.insets = new Insets(20, 0, 20, 0);
+        gbc.insets = new Insets(-10, 0, -30, 0);
 
         // כפתור תמונה ל-Play
         JButton playButton = createImageButton("/start bt.png", e -> mainFrame.showGamePanel());
