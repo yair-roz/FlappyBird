@@ -20,6 +20,8 @@ public class GamePanel extends JPanel implements KeyListener {
     private double gravity = 0.5;
     private double jumpSpeed = -7;
     private double score = 0;
+    private double gameSpeed = 1;
+    private boolean cheat = false;
 
 
     private SoundPlayer SoundPlayer = new SoundPlayer();
@@ -41,7 +43,7 @@ public class GamePanel extends JPanel implements KeyListener {
             while (true) {
                 pipeManager.addPipePair();
                 try {
-                    Thread.sleep(1250);
+                    Thread.sleep((long) (1250*gameSpeed));
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -53,10 +55,11 @@ public class GamePanel extends JPanel implements KeyListener {
         new Thread(() -> {
             while (true) {
                 move();
+                addSpeed();
                 repaint();
                 if (!running) break;
                 try {
-                    Thread.sleep(1000 / 60);
+                    Thread.sleep((long) (1000 / 60 * gameSpeed));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -68,7 +71,7 @@ public class GamePanel extends JPanel implements KeyListener {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(backgroundImage, 0, 0, WIDTH, HEIGHT, null);
-        bird.draw(g);
+        bird.draw(g, this.velocity);
         pipeManager.draw(g);
         drawScore(g);
     }
@@ -89,10 +92,11 @@ public class GamePanel extends JPanel implements KeyListener {
 
         double add = pipeManager.update(bird);
         score += add;
+
         if (add > 0) {
             SoundPlayer.Transition_between_pipes_sound();
         }
-        if (pipeManager.checkCollision(bird)) {
+        if (pipeManager.checkCollision(bird) && !cheat) {
             SoundPlayer.gameOverSound();
             running = false;
         }
@@ -102,7 +106,6 @@ public class GamePanel extends JPanel implements KeyListener {
 
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-
             if (!running) {
                 restartGame();
             } else {
@@ -111,15 +114,27 @@ public class GamePanel extends JPanel implements KeyListener {
 
             }
         }
+        if (e.getKeyCode() == KeyEvent.VK_S){
+            this.cheat = !cheat;
+        }
     }
 
     private void restartGame() {
         bird.reset();
+        this.gameSpeed = 1;
         velocity = 0;
         score = 0;
         pipeManager.reset();
         running = true;
         startGameLoop();
+    }
+
+    private void addSpeed(){
+        if (this.score == 20){
+            this.gameSpeed = 0.85;
+        } else if (this.score == 40) {
+            this.gameSpeed = 0.7;
+        }
     }
 
     @Override public void keyTyped(KeyEvent e) {}

@@ -15,7 +15,7 @@ public class PipeManager {
     }
 
     public void addPipePair() {
-        int space = 170;
+        int space = (int) (200);
         int topHeight = random.nextInt(300) + 100;
         pipes.add(new Pipe(400, topHeight - 512, true));
         pipes.add(new Pipe(400, topHeight + space, false));

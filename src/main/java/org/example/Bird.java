@@ -11,15 +11,21 @@ public class Bird {
     private double y = 300;
     private final int width = 40;
     private final int height = 38;
-    private Image birdImage;
+    private Image birdImageDown;
+    private Image birdImageUp;
 
     public Bird() {
-        birdImage = new ImageIcon(getClass().getResource("/BirdDown.png")).getImage();
+        birdImageDown = new ImageIcon(getClass().getResource("/BirdDown.png")).getImage();
+        birdImageUp = new ImageIcon(getClass().getResource("/BirdUp.png")).getImage();
     }
 
 
-    public void draw(Graphics g) {
-        g.drawImage(birdImage, (int)x, (int)y, width, height, null);
+    public void draw(Graphics g, double velocity) {
+        if (velocity >= 0){
+            g.drawImage(birdImageDown, (int)x, (int)y, width, height, null);
+        }else {
+            g.drawImage(birdImageUp, (int)x, (int)y, width, height, null);
+        }
     }
 
     public void move(double velocity) {
