@@ -4,8 +4,6 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import javax.swing.ImageIcon;
 
-// מחלקת Bird – מייצגת את הציפור במשחק
-// שומרת מידע על מיקום, גודל, תמונה, ומטפלת בציור ותנועה
 public class Bird {
     private double x = 50;
     private double y = 200;
@@ -18,7 +16,6 @@ public class Bird {
         birdImageDown = new ImageIcon(getClass().getResource("/BirdDown.png")).getImage();
         birdImageUp = new ImageIcon(getClass().getResource("/BirdUp.png")).getImage();
     }
-
 
     public void draw(Graphics g, double velocity) {
         if (velocity >= 0){

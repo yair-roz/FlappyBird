@@ -1,5 +1,4 @@
 package org.example;
-
 import javax.sound.sampled.*;
 import javax.swing.*;
 import java.io.File;
@@ -19,7 +18,7 @@ public class SoundPlayer {
                 try {
                     URL soundUrl = getClass().getResource(jumpPath);
                     if (soundUrl == null) {
-                        System.err.println("משאב סאונד קפיצה לא נמצא ב-classpath: " + jumpPath);
+                        System.err.println("sound not found in classpath: " + jumpPath);
                         return;
                     }
 
@@ -33,7 +32,7 @@ public class SoundPlayer {
                     clip.start();
                 } catch (Exception e) {
                     e.printStackTrace();
-                    System.err.println("שגיאה בניגון סאונד קפיצה: " + "/resources/jump.wav");
+                    System.err.println("Error playing sound: " + "/resources/jump.wav");
                 }
             }
         }).start();
@@ -46,7 +45,7 @@ public class SoundPlayer {
                 try {
                     URL soundUrl = getClass().getResource(gameOverPath);
                     if (soundUrl == null) {
-                        System.err.println("משאב סאונד קפיצה לא נמצא ב-classpath: " + gameOverPath);
+                        System.err.println("sound not found in classpath: " + gameOverPath);
                         return;
                     }
 
@@ -59,10 +58,9 @@ public class SoundPlayer {
                     });
                     clip.start();
 
-
                 } catch (Exception e) {
                     e.printStackTrace();
-                    System.err.println("שגיאה בניגון סאונד קפיצה: " + "/resources/jump.wav");
+                    System.err.println("Error playing sound: " + "/resources/jump.wav");
                 }
             }
         }).start(); // מפעיל את ה-Thread החדש
@@ -75,7 +73,7 @@ public class SoundPlayer {
                 try {
                     URL soundUrl = getClass().getResource(transitionPath);
                     if (soundUrl == null) {
-                        System.err.println("משאב סאונד קפיצה לא נמצא ב-classpath: " + transitionPath);
+                        System.err.println("sound not found in classpath: " + transitionPath);
                         return;
                     }
 
@@ -88,10 +86,9 @@ public class SoundPlayer {
                     });
                     clip.start();
 
-
                 } catch (Exception e) {
                     e.printStackTrace();
-                    System.err.println("שגיאה בניגון סאונד קפיצה: " + "/resources/jump.wav");
+                    System.err.println("Error playing sound: " + "/resources/jump.wav");
                 }
             }
         }).start();

@@ -1,5 +1,3 @@
-// מחלקת GamePanel – הלב של המשחק
-// JPanel שמטפל בציור הגרפי, תנועת הציפור והצינורות, קלט מקלדת וניהול מצב המשחק
 package org.example;
 import javax.sound.midi.Soundbank;
 import javax.swing.*;
@@ -17,7 +15,7 @@ public class GamePanel extends JPanel implements KeyListener {
     private boolean running = true;
     private double velocity = 0;
     private double gravity = 0.5;
-    private double jumpSpeed = -7;
+    private double jumpSpeed = -8.5;
     private double score = 0;
     private double gameSpeed = 1;
     private boolean cheat = false;
@@ -100,7 +98,6 @@ public class GamePanel extends JPanel implements KeyListener {
     }
 
     @Override
-
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             if (!running) {
@@ -127,10 +124,10 @@ public class GamePanel extends JPanel implements KeyListener {
     }
 
     private void addSpeed(){
-        if (this.score == 20){
+        if (this.score == 15){
             this.gameSpeed = 0.85;
-        } else if (this.score == 40) {
-            this.gameSpeed = 0.7;
+        } else if (this.score == 30) {
+            this.gameSpeed = 0.75;
         }
     }
 

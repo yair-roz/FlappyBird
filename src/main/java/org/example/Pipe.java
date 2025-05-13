@@ -1,5 +1,3 @@
-// מחלקת Pipe – מייצגת צינור אחד (למעלה או למטה)
-// שומרת מידע על מיקום, גובה, סוג (עליון/תחתון), ודגל אם הציפור כבר עברה אותו
 package org.example;
 import java.awt.Graphics;
 import java.awt.Image;

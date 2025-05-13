@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainFrame extends JFrame {
+
     public static final int APP_WIDTH = 360;
     public static final int APP_HEIGHT = 640;
 
@@ -16,7 +17,7 @@ public class MainFrame extends JFrame {
         setTitle("Flappy Bird");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(APP_WIDTH, APP_HEIGHT); // שמירה של החלון על גודל קבוע
+        setSize(APP_WIDTH, APP_HEIGHT);
         setLocationRelativeTo(null);
 
         try {
@@ -33,11 +34,9 @@ public class MainFrame extends JFrame {
         cardLayout = new CardLayout();
         mainPanelContainer = new JPanel(cardLayout);
 
-        // אתחול הפאנלים
         homeScreenPanel = new HomeScreen(this);
         Instructions = new Instructions(this);
 
-        // הוספת הפאנלים ל-CardLayout
         mainPanelContainer.add(homeScreenPanel, "HOME");
         mainPanelContainer.add(Instructions, "INSTRUCTIONS");
 

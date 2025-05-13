@@ -1,4 +1,3 @@
-// PipeManager – אחראי ליצירת זוגות צינורות, ציור, תנועה, בדיקת התנגשות וניקוד
 package org.example;
 import java.awt.*;
 import java.util.ArrayList;
