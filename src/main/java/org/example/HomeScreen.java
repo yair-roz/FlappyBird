@@ -5,11 +5,11 @@ import java.net.URL;
 
 public class HomeScreen extends JPanel {
 
-    private MainFrame mainFrame;
+    private ScreenManager ScreenManager;
 
-    public HomeScreen(MainFrame frame) {
-        this.mainFrame = frame;
-        setPreferredSize(new Dimension(MainFrame.APP_WIDTH, MainFrame.APP_HEIGHT));
+    public HomeScreen(ScreenManager screen) {
+        this.ScreenManager = screen;
+        setPreferredSize(new Dimension(ScreenManager.APP_WIDTH, ScreenManager.APP_HEIGHT));
         setLayout(new BorderLayout());
 
         JLabel backgroundLabel = new JLabel();
@@ -17,7 +17,7 @@ public class HomeScreen extends JPanel {
             URL imgUrl = getClass().getResource("/homeBackground.jpg");
             if (imgUrl != null) {
                 ImageIcon backgroundImgIcon = new ImageIcon(imgUrl);
-                Image image = backgroundImgIcon.getImage().getScaledInstance(MainFrame.APP_WIDTH, MainFrame.APP_HEIGHT, Image.SCALE_SMOOTH);
+                Image image = backgroundImgIcon.getImage().getScaledInstance(ScreenManager.APP_WIDTH, ScreenManager.APP_HEIGHT, Image.SCALE_SMOOTH);
                 backgroundLabel.setIcon(new ImageIcon(image));
             } else {
                 System.err.println("Home screen background image not found: /homeBackground.jpg. Using fallback color.");
@@ -39,8 +39,8 @@ public class HomeScreen extends JPanel {
         gbc.anchor = GridBagConstraints.CENTER;
         gbc.insets = new Insets(-10, 0, -30, 0);
 
-        JButton playButton = createImageButton("/start bt.png", e -> mainFrame.showGamePanel());
-        JButton howToButton = createImageButton("/how to play bt.png", e -> mainFrame.showInstructionsPanel());
+        JButton playButton = createImageButton("/start bt.png", e -> ScreenManager.showGamePanel());
+        JButton howToButton = createImageButton("/how to play bt.png", e -> ScreenManager.showInstructionsPanel());
 
         buttonPanel.add(playButton, gbc);
         buttonPanel.add(howToButton, gbc);

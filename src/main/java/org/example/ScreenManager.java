@@ -2,7 +2,7 @@ package org.example;
 import javax.swing.*;
 import java.awt.*;
 
-public class MainFrame extends JFrame {
+public class ScreenManager extends JFrame {
 
     public static final int APP_WIDTH = 360;
     public static final int APP_HEIGHT = 640;
@@ -13,7 +13,7 @@ public class MainFrame extends JFrame {
     private Instructions Instructions;
     private GamePanel gamePanel;
 
-    public MainFrame() {
+    public ScreenManager() {
         setTitle("Flappy Bird");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);

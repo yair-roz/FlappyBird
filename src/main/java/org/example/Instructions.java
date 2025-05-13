@@ -5,11 +5,11 @@ import java.net.URL;
 
 public class Instructions extends JPanel {
 
-    private MainFrame mainFrame;
+    private ScreenManager ScreenManager;
 
-    public Instructions(MainFrame frame) {
-        this.mainFrame = frame;
-        setPreferredSize(new Dimension(MainFrame.APP_WIDTH, MainFrame.APP_HEIGHT));
+    public Instructions(ScreenManager screen) {
+        this.ScreenManager = screen;
+        setPreferredSize(new Dimension(ScreenManager.APP_WIDTH, ScreenManager.APP_HEIGHT));
         setLayout(new BorderLayout());
 
         JLabel imageLabel = new JLabel();
@@ -19,7 +19,7 @@ public class Instructions extends JPanel {
             URL imgUrl = getClass().getResource("/instructions.png");
             if (imgUrl != null) {
                 ImageIcon icon = new ImageIcon(imgUrl);
-                Image image = icon.getImage().getScaledInstance(MainFrame.APP_WIDTH, MainFrame.APP_HEIGHT - 80, Image.SCALE_SMOOTH);
+                Image image = icon.getImage().getScaledInstance(ScreenManager.APP_WIDTH, ScreenManager.APP_HEIGHT - 80, Image.SCALE_SMOOTH);
                 imageLabel.setIcon(new ImageIcon(image));
             } else {
                 System.err.println("Instructions image not found: /instructions.png. Displaying text.");
@@ -37,7 +37,7 @@ public class Instructions extends JPanel {
         JButton backButton = new JButton("Back");
 
         backButton.setFont(new Font("Arial", Font.BOLD, 18));
-        backButton.addActionListener(e -> mainFrame.showHomeScreen());
+        backButton.addActionListener(e -> ScreenManager.showHomeScreen());
         bottomPanel.add(backButton);
 
         add(bottomPanel, BorderLayout.SOUTH);
