@@ -15,7 +15,7 @@ public class GamePanel extends JPanel implements KeyListener {
     private boolean running = true;
     private double velocity = 0;
     private double gravity = 0.5;
-    private double jumpSpeed = -8.5;
+    private double jumpSpeed = -8;
     private double score = 0;
     private double gameSpeed = 1;
     private boolean cheat = false;
