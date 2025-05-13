@@ -22,7 +22,7 @@ public class PipeManager {
     }
 
     public void draw(Graphics g) {
-        for (int i =0; i<pipes.size(); i++) {
+        for (int i = 0; i < pipes.size(); i++) {
             Pipe pipe = pipes.get(i);
             pipe.draw(g);
         }
@@ -30,11 +30,11 @@ public class PipeManager {
 
     public double update(Bird bird) {
         double scoreIncrease = 0;
-        for (int i =0; i<pipes.size(); i++) {
+        for (int i = 0; i < pipes.size(); i++) {
             Pipe pipe = pipes.get(i);
             pipe.move();
             if (pipe.getX() + 64 < 0) {
-                pipes.remove(pipe); // חוקי ב-CopyOnWriteArrayList
+                pipes.remove(pipe);
             }
             if (!pipe.isPassed() && pipe.getX() + 64 < 50) {
                 pipe.setPassed(true);
@@ -47,7 +47,7 @@ public class PipeManager {
 
     public boolean checkCollision(Bird bird) {
         Rectangle birdRect = bird.getBounds();
-        for (int i =0; i<pipes.size(); i++) {
+        for (int i = 0; i < pipes.size(); i++) {
             Pipe pipe = pipes.get(i);
             if (birdRect.intersects(pipe.getBounds())) {
                 return true;

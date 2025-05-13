@@ -1,7 +1,6 @@
 // מחלקת GamePanel – הלב של המשחק
 // JPanel שמטפל בציור הגרפי, תנועת הציפור והצינורות, קלט מקלדת וניהול מצב המשחק
 package org.example;
-
 import javax.sound.midi.Soundbank;
 import javax.swing.*;
 import java.awt.*;
@@ -22,8 +21,6 @@ public class GamePanel extends JPanel implements KeyListener {
     private double score = 0;
     private double gameSpeed = 1;
     private boolean cheat = false;
-
-
     private SoundPlayer SoundPlayer = new SoundPlayer();
 
     public GamePanel() {
@@ -43,7 +40,7 @@ public class GamePanel extends JPanel implements KeyListener {
             while (true) {
                 pipeManager.addPipePair();
                 try {
-                    Thread.sleep((long) (1250*gameSpeed));
+                    Thread.sleep((long) (1250 * gameSpeed));
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
