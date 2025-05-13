@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 // שומרת מידע על מיקום, גודל, תמונה, ומטפלת בציור ותנועה
 public class Bird {
     private double x = 50;
-    private double y = 300;
+    private double y = 150;
     private final int width = 40;
     private final int height = 38;
     private Image birdImageDown;
@@ -34,7 +34,7 @@ public class Bird {
 
     public void reset() {
         x = 50;
-        y = 300;
+        y = 150;
     }
 
     public Rectangle getBounds() {
