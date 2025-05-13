@@ -36,7 +36,7 @@ public class Pipe {
     }
 
     public Rectangle getBounds() {
-        return new Rectangle(x, y, width, height);
+        return new Rectangle(x, y, width, height - 3);
     }
 
     public int getX() {
