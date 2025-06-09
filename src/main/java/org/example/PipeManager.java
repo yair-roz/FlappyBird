@@ -1,7 +1,5 @@
 package org.example;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
 
